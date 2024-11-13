@@ -1,4 +1,4 @@
-package interview.questions;
+package interview.questions.exceptions;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

@@ -1,4 +1,4 @@
-package interview.questions;
+package interview.questions.exceptions;
 
 public class CustomExceptionTutorial {
     public static void main(String[] args) throws AgeLessThanZeroException {

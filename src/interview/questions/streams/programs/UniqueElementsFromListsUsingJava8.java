@@ -5,21 +5,17 @@ import java.util.function.Function;
 import java.util.stream.*;
 
 public class UniqueElementsFromListsUsingJava8 {
-        // main method
         public static void main(String[] args) {
-
             uniqueElementsFrom2Lists();
-            String str = "JavaJava";
-            Map<Character, Long> m = str
-                    .chars()
-                    .mapToObj(c -> (char) c)
-                    .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
-            m.forEach((k,v) -> {
-                if (v>1) {
-
-
-                }
-            });
+//            String str = "JavaJava";
+//            Map<Character, Long> m = str
+//                    .chars()
+//                    .mapToObj(c -> (char) c)
+//                    .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+//            m.forEach((k,v) -> {
+//                if (v>1) {
+//                }
+//            });
 
 
             // create ArrayList list1

@@ -1,4 +1,4 @@
-package interview.questions;
+package interview.questions.exceptions;
 
 /**
  * If I extend this class from Exception class, then it's called Checked Exception -> Java will ask the programmer to handle
