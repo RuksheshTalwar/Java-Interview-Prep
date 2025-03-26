@@ -14,5 +14,7 @@ public class Main {
 
         Thread t1 = new Thread(runnable, "Thread t1");
         Thread t2 = new Thread(runnable, "Thread t2");
+        t1.start();
+        t2.start();
     }
 }
