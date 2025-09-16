@@ -8,7 +8,7 @@ public class SharedResource {
         System.out.println("Producer Thread has produced the item");
         /**
          * Using notifyAll() method, we are saying that All the threads which are waiting on this
-         * Object (SharedResource) wake up and use Monitor Lock to use this object
+         * Object (SharedResource), wake up and use Monitor Lock to use this object
          */
         notifyAll();
     }

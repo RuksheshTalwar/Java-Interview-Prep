@@ -4,10 +4,12 @@ public class Pen {
 
     /**
      * If any instance method is declared with synchronized keyword, this means this method
-     * will acquire the intrinsic lock of the object this method belongs to, like this method will acquire the Pen's object
-     * Now this method writeWithPenAndPaper(paper) has called finishWriting() method but as this method is also synchronized, it has
-     * intrinsic lock of Paper object, writeWithPenAndPaper(paper) method is trying to acquire Paper object's lock
+     * will acquire the intrinsic lock (MONITOR LOCK) of the object this method belongs to, like this method will acquire the Pen's object
+     * Now method writeWithPenAndPaper(paper) has called finishWriting() method on Paper object but as finishWriting() method is also synchronized,
+     * it has intrinsic lock of Paper object, writeWithPenAndPaper(paper) method is trying to acquire Paper object's lock
+     * In simple words, Deadlock is occurring because Paper object is trying to Lock
      */
+
     public synchronized void writeWithPenAndPaper(Paper paper) {
         System.out.println(Thread.currentThread().getName() + " is using pen " + this + " and trying to use paper ");
         paper.finishWriting();
