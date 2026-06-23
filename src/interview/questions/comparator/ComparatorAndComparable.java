@@ -22,6 +22,7 @@ public class ComparatorAndComparable {
         strs.add("trijal");
         strs.add("netik");
 
+        //Comparing strings by its length
         Collections.sort(strs, comparator);
         System.out.println(strs);
     }

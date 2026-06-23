@@ -10,20 +10,22 @@ public class SharedResource {
     public SharedResource(int bufferSize) {
         queue = new LinkedList<>();
         this.bufferSize = bufferSize;
-
     }
 
     public synchronized void produce(int item) {
-        //If Buffer is full, wait for the consumer to consume items
+        /**
+         * If Buffer is full, wait for the consumer to consume items
+         */
         while (queue.size() == bufferSize) {
             System.out.println("Buffer is full, Producer is waiting for the consumer");
             try {
                 wait();
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                //handle exception here
             }
         }
         queue.add(item);
+        System.out.println("Produced -> " + item);
         notify();
     }
 
@@ -38,7 +40,10 @@ public class SharedResource {
         }
         int item = queue.poll();
         System.out.println("Consumed item : " + item);
-        //Notify the Producer Thread that there is space in the Queue now
+        /**
+         * Notify the Producer Thread that there is space in the Queue now
+         */
+        notify();
         return item;
     }
 }

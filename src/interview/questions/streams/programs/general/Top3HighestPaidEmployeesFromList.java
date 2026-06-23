@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
  */
 public class Top3HighestPaidEmployeesFromList {
     public static void main(String[] args) {
-        Map<String, List<Employee>> employeeNamesGroupedByDepartment = createEmployeeData();
+        Map<String, List<Employee>> employeeNamesGroupedByDepartment = group3TopPaidEmployeesByDepartment();
         employeeNamesGroupedByDepartment.forEach((k,v) -> {
             String names = v.stream()
                     .map(Employee::getName)
@@ -18,21 +18,21 @@ public class Top3HighestPaidEmployeesFromList {
         });
     }
 
-    private static Map<String, List<Employee>> createEmployeeData() {
-        List<Employee> employees = List.of(new Employee("Rukshesh", "IT", 2500.50),
-                new Employee("Himanshi", "IT", 3500.50),
-                new Employee("Himanshi2", "IT", 3600.50),
-                new Employee("Himanshi3", "IT", 3700.50),
-                new Employee("John", "Engineering", 3600.50),
-                new Employee("Sam", "Engineering", 3700.50),
-                new Employee("Ghansham", "Engineering", 3800.50),
-                new Employee("Ghansham2", "Engineering", 3900.50),
-                new Employee("Ram", "HR", 4500.50),
-                new Employee("Ram2", "HR", 4600.50),
-                new Employee("Ram3", "HR", 4700.50),
-                new Employee("Sham", "ADMIN", 5500.50),
-                new Employee("Sham2", "ADMIN", 5600.50),
-                new Employee("Sham3", "ADMIN", 5700.50));
+    private static Map<String, List<Employee>> group3TopPaidEmployeesByDepartment() {
+        List<Employee> employees = List.of(new Employee("AIT", "IT", 2500.50),
+                new Employee("BIT", "IT", 3500.50),
+                new Employee("CIT", "IT", 3600.50),
+                new Employee("DIT", "IT", 3700.50),
+                new Employee("AE", "Engineering", 3600.50),
+                new Employee("BE", "Engineering", 3700.50),
+                new Employee("CE", "Engineering", 3800.50),
+                new Employee("DE", "Engineering", 3900.50),
+                new Employee("AHR", "HR", 4500.50),
+                new Employee("BHR", "HR", 4600.50),
+                new Employee("CHR", "HR", 4700.50),
+                new Employee("AAD", "ADMIN", 5500.50),
+                new Employee("BAD", "ADMIN", 5600.50),
+                new Employee("CAD", "ADMIN", 5700.50));
 
         Map<String, List<Employee>> output = employees.stream()
                 .collect(Collectors.groupingBy(

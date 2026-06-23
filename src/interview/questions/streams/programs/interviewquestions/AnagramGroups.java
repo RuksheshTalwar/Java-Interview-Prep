@@ -4,7 +4,7 @@ import java.util.*;
 
 public class AnagramGroups {
     public static void main(String[] args) {
-        Integer[] arr = {44,55,89,90,34,56, 44, 56, 89};
+        Integer[] arr = {44,55,89,90,34,56,44,56,89};
         Arrays.sort(arr);
         //LinkedHashSet class preserves the insertion order
         Set<Integer> set = new LinkedHashSet<>();

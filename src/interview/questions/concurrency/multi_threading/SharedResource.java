@@ -7,8 +7,9 @@ public class SharedResource {
         isItemAvailable = true;
         System.out.println("Producer Thread has produced the item");
         /**
-         * Using notifyAll() method, we are saying that All the threads which are waiting on this
-         * Object (SharedResource), wake up and use Monitor Lock to use this object
+         * Using notifyAll() method, we are saying that All the threads
+         * which are waiting on this
+         * object (SharedResource), wake up and use Monitor Lock to use this object
          */
         notifyAll();
     }
@@ -22,7 +23,11 @@ public class SharedResource {
                 throw new RuntimeException(e);
             }
         }
-        System.out.println("Consumer Thread consumed the item");
+        System.out.println("Consumer Thread consumed the item : "
+                + Thread.currentThread().getName());
         isItemAvailable = false;
     }
+
+
+
 }

@@ -30,13 +30,24 @@ public class UsingMaxExamples {
         System.out.println("Latest date: " + latest);
 
         /**
-         * 2 -> Program to Remove the duplicates from a String and return the String in the same order
+         * 2 -> Program to Find the Longest String
          */
-        String str = "rukshesh is a great guy";
-        removeDuplicates(str);
+        List<String> words = List.of("Java", "Spring", "Kubernetes", "Docker", "API", "Microservices", "AI");
+        String max = words.stream()
+                .max(Comparator.comparingInt(String::length))
+                .orElse("");
+
+        System.out.println("Longest String is " + max);
 
         /**
-         * 3 -> Program to Find the Student with the Highest GPA
+         * 3 -> Program to Remove the duplicates from a String and return the String in the same order
+         */
+        String str = "rukshesh is a great guy";
+        String s = removeDuplicates(str);
+        System.out.println(s);
+
+        /**
+         * 4 -> Program to Find the Student with the Highest GPA
          */
         Student topStudent = students.stream()
                 .max(Comparator.comparingDouble(Student::getGpa))
@@ -51,7 +62,7 @@ public class UsingMaxExamples {
                 .map(String::valueOf)
                 .collect(Collectors.joining());
     }
-}
+    }
 
     class Student {
         String name;

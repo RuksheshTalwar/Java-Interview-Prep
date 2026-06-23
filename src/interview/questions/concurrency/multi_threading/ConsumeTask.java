@@ -9,6 +9,7 @@ public class ConsumeTask implements Runnable{
 
     @Override
     public void run() {
+        System.out.println("Consumer Thread: " + Thread.currentThread().getName());
         sharedResourceObj.consumeItem();
     }
 }

@@ -6,7 +6,7 @@ public class Student2 {
     String name;
     int age;
 
-    Student2(int rollno, String name, int age){
+    Student2 (int rollno, String name, int age){
         this.rollno=rollno;
         this.name=name;
         this.age=age;
